@@ -4,15 +4,27 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Weather Dashboard</title>
 </head>
-<body>
-    <div class="jumbotron jumbotron-fluid">
-        <div class="container">
-          <h1 class="display-4 horizontal-gradient">Weather Dashboard</h1>
+
+<!-- Header for dashboard -->
+<header>
+    <div class="jumbotron jumbotron-fluid horizontal-gradient">
+        <div class="container" style="margin:auto; max-width:fit-content">
+          <h1 class="display-4">Weather Dashboard</h1>
           <p class="lead"></p>
         </div>
     </div>
+</header>
+
+<!-- creating search button -->
+<body>
+    <form class="city" action="/action_page.php" style="margin:left;max-width:300px">
+        <input type="text" placeholder="Search.." name="search2">
+        <button type="submit"><i class="fa fa-search"></i></button>
+      </form>
     <script src="./assets/script.js"></script>
 </body>
 </html>
