@@ -26,10 +26,12 @@
 <body>
     <!-- putting search button in a container -->
     <div class="searchContainer">
-        <form class="city" action="/action_page.php" style="margin:left;max-width:300px">
+        <form class="city" action="/action_page.php" style="margin:left;max-width:300px" method="get">
             <h4>Search for a City:</h4>
-            <input type="text" placeholder="Search.." name="search2">
-            <button class="citySearch" type="submit"><i class="fa fa-search"></i></button>
+            <input type="text" value="" name="search2">
+
+            <button class="citySearch" type="submit" value="click" onClick="citySearch(this.form)"><i
+                    class="fa fa-search"></i></button>
         </form>
         <div class="pastSearchContainer" id="pastSearchLink">
         </div>
@@ -37,7 +39,7 @@
 
     <!-- making container for current and 5 day forecast -->
     <div class="list" id="currentWeatherContainer">
-        
+
     </div>
     <script src="./assets/script.js"></script>
 </body>
