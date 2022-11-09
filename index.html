@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./assets/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <title>Weather Dashboard</title>
 </head>
 
@@ -13,18 +15,31 @@
 <header>
     <div class="jumbotron jumbotron-fluid horizontal-gradient">
         <div class="container" style="margin:auto; max-width:fit-content">
-          <h1 class="display-4">Weather Dashboard</h1>
-          <p class="lead"></p>
+            <h1 class="display-4">Weather Dashboard</h1>
+            <p class="lead"></p>
         </div>
     </div>
 </header>
 
 <!-- creating search button -->
+
 <body>
-    <form class="city" action="/action_page.php" style="margin:left;max-width:300px">
-        <input type="text" placeholder="Search.." name="search2">
-        <button type="submit"><i class="fa fa-search"></i></button>
-      </form>
+    <!-- putting search button in a container -->
+    <div class="searchContainer">
+        <form class="city" action="/action_page.php" style="margin:left;max-width:300px">
+            <h4>Search for a City:</h4>
+            <input type="text" placeholder="Search.." name="search2">
+            <button class="citySearch" type="submit"><i class="fa fa-search"></i></button>
+        </form>
+        <div class="pastSearchContainer" id="pastSearchLink">
+        </div>
+    </div>
+
+    <!-- making container for current and 5 day forecast -->
+    <div class="list" id="currentWeatherContainer">
+        
+    </div>
     <script src="./assets/script.js"></script>
 </body>
+
 </html>
