@@ -10,7 +10,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <title>Weather Dashboard</title>
 </head>
-
+<body>
 <!-- Header for dashboard -->
 <header>
     <div class="jumbotron jumbotron-fluid horizontal-gradient">
@@ -21,12 +21,11 @@
     </div>
 </header>
 
+<main>
 <!-- creating search button -->
-
-<body>
     <!-- putting search button in a container -->
-    <div class="searchContainer">
-        <form class="city" action="/action_page.php" style="margin:left;max-width:300px" method="get">
+    <div class="searchContainer p-3 my-3 border">
+        <form class="city" id="cityForm" action="/action_page.php" style="margin:left;max-width:300px" method="get">
             <h4>Search for a City:</h4>
             <input type="text" value="" name="search2">
 
@@ -38,10 +37,14 @@
     </div>
 
     <!-- making container for current and 5 day forecast -->
-    <div class="list" id="currentWeatherContainer">
+    <div id="currentWeatherContainer" class="list">
+        <div id="iconsContainer" class="icons">
+
+        </div>
 
     </div>
     <script src="./assets/script.js"></script>
+</main>
 </body>
 
 </html>

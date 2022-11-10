@@ -1,4 +1,5 @@
-var city = []
+var cities = []
+var formElement = document.querySelector('#cityForm')
 
 // City Search form
 var cityForm = function (event) {
@@ -38,18 +39,28 @@ $(document).on("click", ".pastSearchLink", function (e) {
 	doSearch(search);
 });
 
-// API info for weather forecast
-var getWeather = function (weatherApi) {
+
+
+//OpenWeather API key by city name
+function weatherApi() {
 	const options = {
 		method: 'GET',
 		headers: {
-			'X-RapidAPI-Key': 'c35a4bee2emsh6c315d3399c090bp11f346jsnc0801ef84967',
-			'X-RapidAPI-Host': 'dark-sky.p.rapidapi.com'
+			'apiKey': 'd2692fd833256c6caad1fc0c4c32881a',
+			'apiHost': 'api.openweathermap.org'
 		}
 	};
-
-	fetch('https://dark-sky.p.rapidapi.com/%7Blatitude%7D,%7Blongitude%7D?units=auto&lang=en', options)
+	fetch('api.openweathermap.org/data/2.5/forecast?q={city name}&appid={apiKey}', options)
 		.then(response => response.json())
 		.then(response => console.log(response))
 		.catch(err => console.error(err));
 }
+
+//Display weather, needing icon, temp, windspeed and humidity.
+var displayWeather = function(weather, city) {
+	weatherElement.textContent="";
+	citySearchElement.textContent=City;
+}
+
+//Event listeners
+formElement.addEventListener("submit", cityForm);
