@@ -48,7 +48,18 @@ I am again presented with current and future conditions for that city<br>
 
 ## Credits
 
-N/A
+* [Aside help](https://www.w3schools.com/tags/tag_aside.asp)
+* [Timezone help](https://day.js.org/docs/en/plugin/timezone)
+* [Adding lines](https://www.w3schools.com/tags/tag_hr.asp)
+* [Aria assist](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-controls)
+* [History help](https://stackoverflow.com/questions/65768632/how-to-use-displayed-text-from-a-search-input-to-display-data-from-a-previous-se)
+* [Card Help](https://stackoverflow.com/questions/66113154/addeventlistener-not-working-on-dynamic-dom)
+* [Append Storage](https://javascript.info/localstorage)
+* [Fetch Weather](Function to display the current weather data fetched from OpenWeather api.)
+* [Weather Icon Help](Function to display the current weather data fetched from OpenWeather api.)
+
+
+* Tutor = Chris Baird
 
 ## License
 
