@@ -60,11 +60,6 @@ function fetchWeather(location) {
 	var { lon } = location;
 	var city = location.name;
 
-	//API path trying to us that gives an error saying page not found
-	// var apiUrl = `http://api.openweathermap.org/data/2.5/weather?q=%7Bcity%7D&appid=d2692fd833256c6caad1fc0c4c32881a&units=metric`
-
-	//API path that calls the key and includes lat and lon
-	// var apiUrl = `${weatherApi}/data/2.5/forecast?lat=${lat}&lon=${lon}&units=imperial&appid=${weatherApiKey}`;
 	var apiUrl = `${weatherApi}/data/2.5/forecast?lat=${lat}&lon=${lon}&units=imperial&appid=${weatherApiKey}`;
 	fetch(apiUrl)
 		.then(function (res) {
