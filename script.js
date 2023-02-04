@@ -18,9 +18,6 @@ var cityHistoryContainer = document.querySelector('#history');
 var todayContainer = document.querySelector(`#today`);
 var forecastContainer = document.querySelector('#forecast');
 
-
-
-
 // Pull City Search from local storage
 function initCityHistory() {
 	var cityStored = localStorage.getItem('search-history');
@@ -79,22 +76,11 @@ function fetchWeather(location) {
 		.catch(function (err) {
 			console.error(err);
 		});
-
-	}
-
-
-
+}
 
 //fetcho coordinates for city weather
 function fetchLocation(search) {
-	// var apiUrl =`api.openweathermap.org/data/2.5/weather?q=London,uk&APPID=d2692fd833256c6caad1fc0c4c32881a`;
-	
 	var weatherApiKey = 'd2692fd833256c6caad1fc0c4c32881a';
-	// var apiUrl = `http://api.openweathermap.org/data/2.5/weather?q=%7Bcity%7D&appid=d2692fd833256c6caad1fc0c4c32881a&units=metric`
-
-	//Lat and lon are not called for this one in this location
-	// var apiUrl = `${weatherApi}/data/2.5/forecast?lat=${lat}&lon=${lon}&units=imperial&appid=${weatherApiKey}`;
-
 	var apiUrl = `${weatherApi}/geo/1.0/direct?q=${search}&limit=5&appid=${weatherApiKey}`;
 
 	fetch(apiUrl)
@@ -120,7 +106,7 @@ function renderCurrentWeather(city, weather) {
 	var tempF = weather.main.temp;
 	var windMph = weather.wind.speed;
 	var humidity = weather.main.humidity;
-	var iconUrl = "http://openweathermap.org/img/wn/${a.weather[0].icon}@2x.png";
+	var iconUrl = `http://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`;
 	var iconDescription = weather.weather[0].description || weather[0].main;
 
 	//create cards for weather results
@@ -156,13 +142,11 @@ function renderCurrentWeather(city, weather) {
 
 //Function to view forecast from API
 function renderForecastCard(forecast) {
-	var iconUrl = "http://openweathermap.org/img/wn/${a.weather[0].icon}@2x.png";
+	var iconUrl = `http://openweathermap.org/img/wn/${forecast.weather[0].icon}@2x.png`;
 	var iconDescription = forecast.weather[0].description;
 	var tempF = forecast.main.temp;
 	var windMph = forecast.wind.speed;
 	var humidity = forecast.main.humidity;
-
-	
 
 	//create cards for weather results
 	var col = document.createElement('div');
@@ -177,6 +161,15 @@ function renderForecastCard(forecast) {
 	col.append(card);
 	card.append(cardBody);
 	cardBody.append(cardTitle, weatherIcon, tempEl, windEl, humidityEl);
+
+	col.setAttribute('class', 'col-md');
+	col.classList.add('five-day-card');
+	card.setAttribute('class', 'card bg-primary h-100 text-white');
+	cardBody.setAttribute('class', 'card-body p-2');
+	cardTitle.setAttribute('class', 'card-title');
+	tempEl.setAttribute('class', 'card-test');
+	windEl.setAttribute('class', 'card-text');
+	humidityEl.setAttribute('class', 'card-text');
 
 	cardTitle.textContent = dayjs(forecast.dt_txt).format('M/D/YYYY');
 	weatherIcon.setAttribute('src', iconUrl);
@@ -237,4 +230,3 @@ function historySearchClick(def) {
 initCityHistory();
 searchDoc.addEventListener('submit', handleSearchForm);
 cityHistoryContainer.addEventListener('click', historySearchClick);
-// _____________________________________________________
